@@ -1,3 +1,27 @@
+Notes
+============
+Just like Spring Data JPA makes the underlying data source available to JPA clients, Spring Data Rest makes the underlying Spring data repositories (e.g. Spring Data JPA repositories) available to REST clients via a REST web service.
+
+Setting up spring-data-rest in a spring-boot project is very simple if spring-data-jpa repositories have been correctly set up .
+Just add the Maven dependency for spring-data-rest:
+```xml
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+```
+
+and in <code>application.properties</code> set the base uri to access the repositories:
+<pre>
+spring.data.rest.base-uri=/api
+</pre>
+
+Then run the project as a Java application (spring-boot application) and access: 
+http://localhost:8080/api/
+
+Spring Data Rest automatically exposes the available hyperlinks to the rest resources.
+
+
 ps-guitar-rest
 ============
 
